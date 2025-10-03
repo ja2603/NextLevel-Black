@@ -55,7 +55,6 @@ st.markdown(
         font-size: 24px;
         font-weight: 400;
         color: #e6eef6; /* Light white-gray */
-        max-width: 600px;
         margin: 0 auto 30px;
         line-height: 1.4;
     }
@@ -105,10 +104,9 @@ st.markdown(
 
     /* Cards and Panels */
     .card {
-        background: linear-gradient(180deg, #0b0b0b, #111);
+        background: linear-gradient(180deg, #0b0b0b, #0b0b0b);
         border-radius: 14px;
         padding: 18px;
-        border: 1px solid #1a1a1a;
         box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
         color: #ffffff; /* White text for cards */
     }
@@ -391,7 +389,7 @@ elif st.session_state.page == "stock":
         st.markdown("<div style='text-align:right' class='small'>Matte black • Live insights</div>", unsafe_allow_html=True)
 
     st.markdown("<h2 style='margin-top:6px'>📈 Stock Analysis</h2>", unsafe_allow_html=True)
-    ticker = st.text_input("Ticker (e.g. AAPL, TCS.NS)", value="AAPL").upper()
+    ticker = st.text_input("Ticker (e.g. AAPL,NKE,TSLA", value="AAPL").upper()
 
     # fetch data
     df, info, ticker_obj = fetch_stock(ticker, start_date, end_date)
